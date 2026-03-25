@@ -505,7 +505,8 @@ body::after{
 /* ── RESPONSIVE ── */
 @media(max-width:800px){
   .hero-battle{grid-template-columns:1fr auto 1fr}.hero-center{padding:16px 12px}
-  .overview{grid-template-columns:repeat(5,1fr)}.ov-item:nth-child(n+4){display:block}
+  .overview{grid-template-columns:repeat(3,1fr) !important}
+  .ov-item:nth-child(n+4){display:block !important}
   .rank-grid{grid-template-columns:1fr}.top-grid{grid-template-columns:1fr 1fr}
   .sess-pills{grid-template-columns:1fr}
   .sb-pts{font-size:56px}.sb-main{max-width:100%}
@@ -528,10 +529,11 @@ body::after{
   .hero-years{font-size:9px}
   .hero-venue{font-size:16px}
   /* Overview */
-  .overview{grid-template-columns:repeat(5,1fr)}.ov-item:nth-child(n+4){display:block}
+  .overview{grid-template-columns:1fr 1fr 1fr !important}
+  .ov-item:nth-child(n+4){display:block !important}
   .overview-wrap{padding:0 8px}
-  .ov-item{padding:12px 4px}
-  .ov-year{font-size:13px}.ov-score{font-size:10px}.ov-badge{font-size:6px;padding:2px 3px;letter-spacing:0.3px}
+  .ov-item{padding:14px 6px;border-bottom:1px solid var(--border)}
+  .ov-year{font-size:15px}.ov-score{font-size:12px}.ov-badge{font-size:8px;padding:3px 6px}
   /* Tabs */
   .tab-nav{gap:2px;padding:0 8px}
   .tab-btn{font-size:10px;padding:8px 10px;letter-spacing:1px}
@@ -712,7 +714,7 @@ body::after{
 
 <!-- ═══ OVERVIEW ═══ -->
 <div class="overview-wrap">
-  <div class="overview-label">Palmarés · 5 ediciones</div>
+  <div class="overview-label">Palmarés · 2021 – 2026</div>
   <div class="overview" id="overview-strip"></div>
 </div>
 
@@ -928,7 +930,11 @@ function buildOverview(){
       <span class="ov-score"><span style="color:${cc}">${d.ccvm}</span> – <span style="color:${rc}">${d.rshe}</span></span>
       <span class="ov-badge ${badgeCls}">${badgeLabel}</span>
     </div>`;
-  }).join('');
+  }).join('') + `<div class="ov-item">
+    <span class="ov-year">2026</span>
+    <span class="ov-score" style="color:rgba(245,240,230,0.3);font-size:12px;letter-spacing:2px">TBC</span>
+    <span class="ov-badge ob-tie" style="opacity:0.4">Próxima</span>
+  </div>`;
 }
 
 // EDITION TAB
