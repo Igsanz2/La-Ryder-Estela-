@@ -21,19 +21,19 @@
   --rshe-gold2:#d4aa45;
   --rshe-cream:#f5ead0;
   /* Neutrales */
-  --bg:#0d1a0f;
-  --bg2:#111f13;
-  --bg3:#162018;
-  --surface:rgba(20,35,22,0.8);
-  --surface2:rgba(15,28,17,0.9);
+  --bg:#101f12;
+  --bg2:#152415;
+  --bg3:#1a2a1a;
+  --surface:rgba(28,48,30,0.85);
+  --surface2:rgba(22,40,24,0.88);
   --white:#ffffff;
-  --cream:#f5f0e8;
-  --gold:#c9a84c;
-  --gold2:#e8c97a;
-  --border:rgba(180,160,80,0.18);
-  --border2:rgba(180,160,80,0.07);
-  --text:rgba(245,240,230,0.9);
-  --text2:rgba(245,240,230,0.5);
+  --cream:#faf6ee;
+  --gold:#d4b055;
+  --gold2:#f0d485;
+  --border:rgba(200,175,90,0.28);
+  --border2:rgba(200,175,90,0.12);
+  --text:rgba(252,248,240,0.95);
+  --text2:rgba(252,248,240,0.65);
 }
 
 html{scroll-behavior:smooth}
@@ -55,10 +55,10 @@ body::before{
 body::after{
   content:'';position:fixed;inset:0;
   background:
-    radial-gradient(ellipse 120% 60% at 50% -5%, rgba(26,92,42,0.18) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 70% at 0% 60%, rgba(26,61,110,0.12) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 70% at 100% 40%, rgba(30,58,30,0.15) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 40% at 50% 100%, rgba(184,146,42,0.06) 0%, transparent 60%);
+    radial-gradient(ellipse 120% 60% at 50% -5%, rgba(26,92,42,0.28) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 70% at 0% 60%, rgba(26,61,110,0.18) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 70% at 100% 40%, rgba(30,58,30,0.22) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 40% at 50% 100%, rgba(184,146,42,0.10) 0%, transparent 60%);
   pointer-events:none;z-index:0;
 }
 
@@ -163,7 +163,7 @@ body::after{
   display:block;
   font-family:'Crimson Pro',serif;
   font-style:italic;font-weight:300;
-  font-size:clamp(36px,6vw,72px);
+  font-size:clamp(56px,9vw,110px);
   letter-spacing:0;
   color:var(--gold);
   text-shadow:0 0 60px rgba(201,168,76,0.5);
@@ -177,7 +177,7 @@ body::after{
 .hero-flag{font-size:18px}
 .hero-venue{
   font-family:'Crimson Pro',serif;font-style:italic;
-  font-size:13px;color:var(--gold);opacity:.5;text-align:center;letter-spacing:1px;
+  font-size:20px;color:var(--gold);opacity:.75;text-align:center;letter-spacing:1px;
 }
 
 /* ── OVERVIEW STRIP ── */
@@ -524,9 +524,9 @@ body::after{
   .club-founded{display:none}
   .hero-center{padding:10px 6px;gap:6px}
   .hero-title{font-size:18px;letter-spacing:2px}
-  .hero-title span{font-size:28px}
+  .hero-title span{font-size:52px}
   .hero-years{font-size:9px}
-  .hero-venue{font-size:11px}
+  .hero-venue{font-size:16px}
   /* Overview */
   .overview{grid-template-columns:repeat(3,1fr)}.ov-item:nth-child(n+4){display:none}
   .ov-year{font-size:15px}.ov-score{font-size:11px}.ov-badge{font-size:7px;padding:2px 5px}
@@ -580,6 +580,17 @@ body::after{
   /* Sec labels */
   .sec-lbl{font-size:8px;letter-spacing:2px}
 }
+
+/* ── PALMARES CARDS ── */
+.palmares-list{display:flex;flex-direction:column;gap:10px;margin-bottom:4px}
+.palmares-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:6px;padding:16px 18px;cursor:pointer;
+  transition:background .2s;
+}
+.palmares-card:hover{background:rgba(201,168,76,0.06)}
+.palmares-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.palmares-score{display:flex;align-items:center}
 
 /* ── JUGADORES ── */
 .jugadores-section{margin-bottom:40px}
@@ -680,7 +691,7 @@ body::after{
     <div class="hero-center">
       <div class="hero-years">2021 – 2025</div>
       <div class="hero-title">
-        La<span>Ryder</span>
+        <span>Ryder</span>
       </div>
       <div class="hero-venue"><span class="hero-flag">⛳</span> GC Estela · Portugal</div>
     </div>
@@ -692,7 +703,7 @@ body::after{
       </div>
       <span class="club-abbr rshe">RSHECC</span>
       <span class="club-fullname">Real Sociedad Hípica Española</span>
-      <span class="club-founded">Fundada 1901 · San Sebastián de los Reyes</span>
+      <span class="club-founded">Fundada 1901 · Madrid</span>
     </div>
   </div>
 </header>
@@ -1013,25 +1024,26 @@ function buildHistory(){
     {y:2025,ccvm:8,  rshe:12, result:'rshe',ret:null,  sess:['3–2','2,5–2,5','2,5–7,5']},
   ];
   html += `<div class="sec-lbl">Palmarés edición a edición</div>
-  <table class="hist-table"><thead><tr>
-    <th>Año</th><th>CCVM</th><th>RSHECC</th>
-    <th style="min-width:150px">Reparto</th>
-    <th>Resultado</th><th>Sesiones</th>
-  </tr></thead><tbody>`;
+  <div class="palmares-list">`;
   rows.forEach(r=>{
     const tot=r.ccvm+r.rshe,pc=(r.ccvm/tot*100).toFixed(1),pr=(r.rshe/tot*100).toFixed(1);
     const names=['FB Mañana','FB Tarde','Individuales'];
     const tags=r.sess.map((s,i)=>`<span class="stag">${names[i]}: ${s}</span>`).join('');
-    html+=`<tr>
-      <td><span class="ht-yr">${r.y}</span></td>
-      <td><span class="ht-c">${r.ccvm}</span></td>
-      <td><span class="ht-r">${r.rshe}</span></td>
-      <td><div class="ht-bar"><div class="sp-c" style="width:${pc}%"></div><div class="sp-r" style="width:${pr}%"></div></div></td>
-      <td>${badgeForResult(r.result,r.ret)}</td>
-      <td><div class="stags">${tags}</div></td>
-    </tr>`;
+    html+=`<div class="palmares-card" onclick="goYear(${r.y})">
+      <div class="palmares-top">
+        <span class="ht-yr">${r.y}</span>
+        <div class="palmares-score">
+          <span class="ht-c">${r.ccvm}</span>
+          <span style="color:var(--text2);font-size:14px;margin:0 4px">–</span>
+          <span class="ht-r">${r.rshe}</span>
+        </div>
+        ${badgeForResult(r.result,r.ret)}
+      </div>
+      <div class="ht-bar" style="margin:8px 0"><div class="sp-c" style="width:${pc}%"></div><div class="sp-r" style="width:${pr}%"></div></div>
+      <div class="stags">${tags}</div>
+    </div>`;
   });
-  html+=`</tbody></table>`;
+  html+=`</div>`;
 
   html+=`<div class="sec-lbl" style="margin-top:32px">Acumulado histórico · 5 ediciones</div>
   <div class="totals-strip">
