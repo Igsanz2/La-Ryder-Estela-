@@ -926,18 +926,18 @@ const DATA = {
   ]},
   2026:{capCCVM:'Gabriel Gamboa',capRSHE:'Iker García',ccvm:8.5,rshe:11.5,result:'rshe',retains:null,sessions:[
     {name:'Fourballs Mañana',score:'2,5 – 2,5',matches:[
-      {ccvm:'Juan Martínez / Javier Saigi',    rshe:'Iker García / Carlos Sánchez',    res:'A/S',  w:'h'},
-      {ccvm:'Pedro Prieto / Fer Ortiz',        rshe:'Pablo Fernández / Javier Sánchez',res:'3&2',  w:'r'},
-      {ccvm:'Pepo Gamboa / Íñigo Sánchez',     rshe:'Pedro Suárez / Frus González',    res:'5&4',  w:'c'},
-      {ccvm:'Gabriel Gamboa / Íñigo Garitano', rshe:'Luis Beraza / Jaime Vigón',       res:'2&1',  w:'r'},
-      {ccvm:'Luigi Prieto / Tuto Prieto',      rshe:'Luciano Díaz / Paco San Miguel',  res:'2&1',  w:'c'},
+      {ccvm:'Juan Martínez / Javier Saigi',    rshe:'Iker García / Carlos Sánchez',       res:'A/S',  w:'h'},
+      {ccvm:'Pedro Prieto / Fer Ortiz',        rshe:'Pablo Fernández / Javier Sánchez',   res:'3&2',  w:'r'},
+      {ccvm:'Pepo Gamboa / Íñigo Sánchez',     rshe:'Pedro Suárez / Frus González',       res:'5&4',  w:'c'},
+      {ccvm:'Gabriel Gamboa / Íñigo Garitano', rshe:'Luis Beraza / Jaime Vigón',          res:'2&1',  w:'c'},
+      {ccvm:'Luigi Prieto / Tuto Prieto',      rshe:'Luciano Díaz / Paco San Miguel',     res:null,   w:'r'},
     ]},
     {name:'Greensome Tarde',score:'2 – 3',matches:[
-      {ccvm:'Juan Martínez / Javier Saigi',         rshe:'Iker García / Carlos Sánchez',       res:'A/S',  w:'h'},
-      {ccvm:'Javier Saigi / Pedro Prieto',          rshe:'Pablo Fernández / Javier Sánchez',   res:'3&2',  w:'r'},
-      {ccvm:'Pepo Gamboa / Íñigo Sánchez',          rshe:'Pedro Suárez / Frus González',       res:'5&4',  w:'c'},
-      {ccvm:'Gabriel Gamboa / Íñigo Garitano',      rshe:'Luis Beraza / Jaime Vigón',          res:'2&1',  w:'r'},
-      {ccvm:'Luigi Prieto / Tuto Prieto',           rshe:'Luciano Díaz / Paco San Miguel',     res:'2&1',  w:'c'},
+      {ccvm:'Javier Saigi / Íñigo Garitano',   rshe:'Iker García / Jaime Vigón',          res:'2&1',  w:'r'},
+      {ccvm:'Pepo Gamboa / Fer Ortiz',         rshe:'Pablo Fernández / Javier Sánchez',   res:'1UP',  w:'c'},
+      {ccvm:'Íñigo Sánchez / Pedro Prieto',    rshe:'Frus González / Luis Beraza',        res:'6&5',  w:'c'},
+      {ccvm:'Tuto Prieto / Luigi Prieto',      rshe:'Luciano Díaz / Paco San Miguel',     res:'6&5',  w:'r'},
+      {ccvm:'Juan Martínez / Gabriel Gamboa',  rshe:'Carlos Sánchez / Pedro Suárez',      res:'1UP',  w:'r'},
     ]},
     {name:'Individuales',score:'4 – 6',matches:[
       {ccvm:'Íñigo Sánchez',   rshe:'Jaime Vigón',     res:'7&6',  w:'r'},
@@ -1101,7 +1101,7 @@ function buildHistory(){
   let html = '';
 
   const rows=[
-    {y:2026,ccvm:8.5,rshe:11.5,result:'rshe',ret:null, sess:['2,5–2,5','2–3','4–6']},
+    {y:2026,ccvm:8.5,rshe:11.5,result:'rshe',ret:null, sess:['2,5–2,5','2,5–2,5','4–6']},
     {y:2025,ccvm:8,  rshe:12, result:'rshe',ret:null,  sess:['3–2','2,5–2,5','2,5–7,5']},
     {y:2024,ccvm:8.5,rshe:8.5,result:'tie', ret:'rshe',sess:['2,5–1,5','1–3','5–4']},
     {y:2023,ccvm:8,  rshe:8,  result:'tie', ret:'rshe',sess:['1–3','1–3','6–2']},
